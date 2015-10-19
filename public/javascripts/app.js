@@ -30,7 +30,7 @@ var AppComponent = (function () {
     }
     AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent.prototype.getSelectedClass = function (hero) {
-        return { 'selected': hero === this.selectedHero };
+        return { 'active': hero === this.selectedHero };
     };
     AppComponent.prototype.addHero = function (hero) {
         var _this = this;
@@ -53,7 +53,7 @@ var AppComponent = (function () {
             viewProviders: [http_1.HTTP_PROVIDERS],
             templateUrl: "/partials/heroes.html",
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
-            styles: ["\n    @import url(/bootstrap/dist/css/bootstrap.min.css);\n    a { cursor: pointer; }\n  "],
+            styles: ["\n    @import url(/bootstrap/dist/css/bootstrap.min.css);\n    a { cursor: pointer; }\n    .list-group-item:first-of-type {\n      border-top-left-radius: 4px;\n      border-top-right-radius: 4px;\n    }\n  "],
             encapsulation: angular2_1.ViewEncapsulation.Native,
         }), 
         __metadata('design:paramtypes', [http_1.Http])

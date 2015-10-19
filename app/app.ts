@@ -19,6 +19,10 @@ class Hero {
   styles:[`
     @import url(/bootstrap/dist/css/bootstrap.min.css);
     a { cursor: pointer; }
+    .list-group-item:first-of-type {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
   `],
   encapsulation: ViewEncapsulation.Native,
 })
@@ -38,7 +42,7 @@ class AppComponent {
   onSelect(hero: Hero) { this.selectedHero = hero; }
 
   getSelectedClass(hero: Hero) {
-    return { 'selected': hero === this.selectedHero };
+    return { 'active': hero === this.selectedHero };
   }
 
   addHero(hero: string) {
