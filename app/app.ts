@@ -18,6 +18,7 @@ class Hero {
   directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
   styles:[`
     @import url(/bootstrap/dist/css/bootstrap.min.css);
+    a { cursor: pointer; }
   `],
   encapsulation: ViewEncapsulation.Native,
 })
@@ -43,12 +44,9 @@ class AppComponent {
   addHero(hero: string) {
     var headers: Headers = new Headers();
     headers.set('Content-Type', 'application/json')
-
-    this.http.post(
-      '/api/heroes',
-      JSON.stringify({name: hero}),
-      new RequestOptions({ headers: headers })
-    ).map(res => res.json())
+    var options = new RequestOptions({ headers: headers })
+    this.http.post( '/api/heroes', JSON.stringify({name: hero}), options )
+      .map(res => res.json())
       .subscribe(hero => this.heroes.push(hero));
   }
 

@@ -36,7 +36,9 @@ var AppComponent = (function () {
         var _this = this;
         var headers = new http_1.Headers();
         headers.set('Content-Type', 'application/json');
-        this.http.post('/api/heroes', JSON.stringify({ name: hero }), new http_1.RequestOptions({ headers: headers })).map(function (res) { return res.json(); })
+        var options = new http_1.RequestOptions({ headers: headers });
+        this.http.post('/api/heroes', JSON.stringify({ name: hero }), options)
+            .map(function (res) { return res.json(); })
             .subscribe(function (hero) { return _this.heroes.push(hero); });
     };
     AppComponent.prototype.doneTyping = function ($event) {
@@ -51,7 +53,7 @@ var AppComponent = (function () {
             viewProviders: [http_1.HTTP_PROVIDERS],
             templateUrl: "/partials/heroes.html",
             directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES],
-            styles: ["\n    @import url(/bootstrap/dist/css/bootstrap.min.css);\n  "],
+            styles: ["\n    @import url(/bootstrap/dist/css/bootstrap.min.css);\n    a { cursor: pointer; }\n  "],
             encapsulation: angular2_1.ViewEncapsulation.Native,
         }), 
         __metadata('design:paramtypes', [http_1.Http])

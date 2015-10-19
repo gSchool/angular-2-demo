@@ -1,28 +1,30 @@
 <div class="page-header">
   <h1>{{title}}</h1>
-  <h2>My Heroes</h2>
+  <div class="form-inline">
+    <div class="form-group">
+      <input #herotext (keyup)="doneTyping($event)" class="form-control" autofocus>
+    </div>
+    <button (click)="addHero(herotext.value)" class="btn btn-primary">Add Hero</button>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-2">
-    <div>
-      <input #herotext (keyup)="doneTyping($event)">
-      <button (click)="addHero(herotext.value)">Add Hero</button>
-    </div>
     <ul class="heroes">
-      <li *ng-for="#hero of heroes"
-        [ng-class]="getSelectedClass(hero)"
-        (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}</a>
+      <li *ng-for="#hero of heroes" [ng-class]="getSelectedClass(hero)">
+        <a (click)="onSelect(hero)"><span class="badge">{{hero.id}}</span> {{hero.name}}</a>
       </li>
     </ul>
   </div>
-  <div class="col-md-10">
-    <div *ng-if="selectedHero">
-      <h2>{{selectedHero.name}} details!</h2>
-      <div><label>id: </label>{{selectedHero.id}}</div>
+  <div class="col-md-4">
+    <div *ng-if="selectedHero" class="form-horizontal">
+      <h2>{{selectedHero.name}}</h2>
+      <div>
+        <label>id: </label>
+        {{selectedHero.id}}
+      </div>
       <div>
         <label>name: </label>
-        <input [(ng-model)]="selectedHero.name" placeholder="name"></input>
+        <input [(ng-model)]="selectedHero.name" placeholder="name" class="form-control"></input>
       </div>
     </div>
   </div>

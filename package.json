@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "tsc": "tsc -p app -w --outDir public/javascripts"
+    "tsc": "tsc -p app -w"
   },
   "devDependencies": {
     "typescript": "^1.6.2"
