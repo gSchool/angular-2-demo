@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <script src="/systemjs/dist/system.src.js"></script>
+    <script src="/angular2/bundles/angular2.dev.js"></script>
+    <script src="/angular2/bundles/http.dev.js"></script>
+    <script src="/angular2/bundles/router.dev.js"></script>
+    <script>
+      System.config({
+        paths: {
+          app: '/javascripts/app.js',
+        },
+        packages: {
+        }
+      });
+      System.import('app');
+    </script>
+  </head>
+  <body>
+    <demo-component>Loading...</demo-component>
+  </body>
+</html>
