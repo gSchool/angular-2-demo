@@ -83,3 +83,7 @@ Look at better alternatives:
 - https://blogs.windows.com/msedgedev/2015/07/14/bringing-componentization-to-the-web-an-overview-of-web-components/#javascript-and-scopes
 
 ## Stretch Goals
+
+- Add the ability to persist edits to the server (requires server + client changes)
+  - BONUS: prevent the sidebar from updating when you change the text in the edit field
+- Add the ability to delete Heroes
