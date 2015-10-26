@@ -1,18 +1,6 @@
 import {provide, bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {HTTP_PROVIDERS, Http, BaseRequestOptions, RequestOptions, Headers} from 'angular2/http';
-
-// This is a simple class in TypeScript
-// In this application, the Hero class is a simple value object
-// that represents one of the Heroes in the database
-class Hero {
-  id: number;
-  name: string;
-
-  constructor(id: number, name: string) {
-    this.id = id;
-    this.name = name;
-  }
-}
+import {Hero} from './hero';
 
 // @Component is an annotation that applies to the AppComponent class below
 //
